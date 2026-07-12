@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Servicii — JOOX Consult</title>
+<meta name="description" content="Serviciile JOOX Consult: social media management (Facebook, Instagram, Reels, conținut foto-video), recrutare blue-collar și de volum, pachet integrat pentru grădinițe și after-school-uri.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&family=IBM+Plex+Sans:wght@400;500&family=Lora:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+.page-hero{padding:clamp(160px,20vh,210px) 0 clamp(60px,8vw,100px);text-align:center}
+.page-hero h1{font-size:clamp(44px,6.6vw,84px);font-family:var(--serif);font-weight:400}
+.page-hero .sub{max-width:52ch;margin:22px auto 0;color:var(--ink-60)}
+.detail{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(36px,6vw,90px);max-width:1080px;margin:0 auto;align-items:start}
+.detail .side{position:sticky;top:130px}
+.detail .side .chip{width:58px;height:58px;border-radius:16px;background:var(--coral);color:#fff;display:flex;align-items:center;justify-content:center;margin-bottom:26px}
+.detail h2{font-size:clamp(32px,3.8vw,48px);margin-bottom:16px}
+.detail .desc{color:var(--ink-60);max-width:40ch;margin-bottom:22px}
+.detail .side .pill{margin-top:30px}
+.list-card{background:var(--card);border-radius:var(--r-lg);padding:clamp(26px,3vw,40px)}
+.band.alt .list-card{background:#fff}
+.clist{list-style:none}
+.clist li{display:flex;gap:16px;align-items:baseline;padding:14px 0;border-bottom:1px solid rgba(27,27,22,.1);font-size:15.5px}
+.clist li:last-child{border-bottom:0}
+.clist li .n{font-family:var(--serif);color:var(--coral);flex-shrink:0;min-width:26px}
+.clist li b{font-weight:500}
+.clist li span{display:block;color:var(--ink-60);font-size:14.5px;font-weight:400}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:0}
+.tag{border-radius:999px;padding:8px 18px;font-size:13.5px;font-weight:500;color:var(--ink)}
+.tags .tag:nth-child(4n+1){background:var(--aqua)}
+.tags .tag:nth-child(4n+2){background:var(--peach)}
+.tags .tag:nth-child(4n+3){background:#F7CCC1}
+.tags .tag:nth-child(4n+4){background:#fff;box-shadow:inset 0 0 0 1px rgba(27,27,22,.12)}
+.band.alt{background:var(--greige)}
+.band.white{background:#fff}
+.proc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1080px;margin:clamp(44px,6vw,70px) auto 0}
+.pcard{background:var(--card);border-radius:var(--r-lg);padding:34px 30px}
+.pcard .num{font-family:var(--serif);font-size:38px;color:var(--coral);line-height:1;margin-bottom:18px}
+.pcard h3{font-size:21px;margin-bottom:8px}
+.pcard p{font-size:14.5px;color:var(--ink-60)}
+.cta-band{background:var(--cream);text-align:center}
+.cta-band h2{font-size:clamp(34px,4.4vw,54px)}
+.cta-band .pill{margin-top:32px}
+@media(max-width:860px){
+  .detail{grid-template-columns:1fr}
+  .detail .side{position:static}
+  .proc-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="navwrap">
+  <nav id="nav">
+    <a class="brand" href="index.html" aria-label="JOOX Consult — acasă">
+      <span class="m">JO<span class="o2">O</span>X</span>
+      <span class="sep"></span>
+    </a>
+    <div class="nlinks" id="nl">
+      <a href="index.html">Acasă</a>
+      <a href="despre.html">Despre noi</a>
+      <a href="servicii.html" class="active">Servicii</a>
+    </div>
+    <button class="burger" id="bg" aria-label="Meniu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <a class="ncta" href="contact.html">Contactează-ne <span class="arr"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+  </nav>
+</div>
+
+<main>
+
+<section class="page-hero">
+  <div class="wrap">
+    <h1 class="rv">Servicii care aliniază<br>oamenii și povestea</h1>
+    <p class="sub rv rv2">De la prezența online care te face remarcat, până la oamenii care îți duc afacerea mai departe — totul cu un singur partener.</p>
+  </div>
+</section>
+
+<section class="band white" id="social-media">
+  <div class="wrap detail">
+    <div class="side rvl">
+      <div class="chip" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><circle cx="12" cy="12" r="3.6"/><circle cx="17.2" cy="6.8" r=".8" fill="currentColor"/></svg></div>
+      <h2>Social Media Management</h2>
+      <p class="desc">Construim o prezență online profesionistă, adaptată domeniului tău. Nu postări la întâmplare, ci o poveste spusă consecvent — care aduce încredere, clienți și candidați.</p>
+      <div class="tags" aria-hidden="true">
+        <span class="tag">Facebook</span><span class="tag">Instagram</span><span class="tag">Reels</span><span class="tag">Foto & Video</span>
+      </div>
+      <a class="pill" href="contact.html">Vreau vizibilitate online</a>
+    </div>
+    <div class="list-card rvr rv2">
+      <ul class="clist">
+        <li><span class="n">01</span><div><b>Administrarea paginilor de Facebook și Instagram</b><span>Prezență activă, coerentă și profesionistă, zi de zi.</span></div></li>
+        <li><span class="n">02</span><div><b>Calendar editorial planificat</b><span>Știi din timp ce se postează, când și cu ce scop.</span></div></li>
+        <li><span class="n">03</span><div><b>Conținut foto și video</b><span>Creat pentru domeniul tău, cu oamenii și locurile tale reale.</span></div></li>
+        <li><span class="n">04</span><div><b>Reels</b><span>Formatul cu cea mai mare acoperire organică din acest moment.</span></div></li>
+        <li><span class="n">05</span><div><b>Texte pentru postări</b><span>Scrise pentru oameni, în vocea brandului tău.</span></div></li>
+        <li><span class="n">06</span><div><b>Promovarea evenimentelor și ofertelor</b><span>Campanii punctuale care aduc rezultate măsurabile.</span></div></li>
+        <li><span class="n">07</span><div><b>Interacțiunea cu comunitatea</b><span>Răspunsuri, mesaje, recenzii — relații reale, nu doar reach.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="band alt" id="recrutare">
+  <div class="wrap detail">
+    <div class="side rvl">
+      <div class="chip" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="8" r="3.4"/><path d="M3.5 19c.7-3 2.9-4.6 5.5-4.6s4.8 1.6 5.5 4.6"/><circle cx="17" cy="9.5" r="2.4"/><path d="M15.5 14.6c2.4.2 4.2 1.5 4.9 4"/></svg></div>
+      <h2>Recrutare</h2>
+      <p class="desc">Identificăm și selectăm candidații potriviți pentru compania ta — economisind timp și resurse, fără compromisuri la calitate.</p>
+      <div class="tags" aria-hidden="true">
+        <span class="tag">Blue-collar</span><span class="tag">Volum</span><span class="tag">Operațional</span><span class="tag">Administrativ</span>
+      </div>
+      <a class="pill" href="contact.html">Caut angajați</a>
+    </div>
+    <div class="list-card rvr rv2">
+      <ul class="clist">
+        <li><span class="n">01</span><div><b>Recrutare blue-collar</b><span>Personal pentru producție, logistică și operațiuni — serios și verificat.</span></div></li>
+        <li><span class="n">02</span><div><b>Recrutare de volum</b><span>Echipe întregi, în termene realiste, cu procese care nu sacrifică selecția.</span></div></li>
+        <li><span class="n">03</span><div><b>Poziții operaționale și administrative</b><span>De la back-office la coordonare, oamenii care țin afacerea în mișcare.</span></div></li>
+        <li><span class="n">04</span><div><b>Selecție și interviuri</b><span>Preluăm tot procesul: screening, interviuri, shortlist, recomandări.</span></div></li>
+        <li><span class="n">05</span><div><b>Consultanță în procesul de recrutare</b><span>Îți construim procese de angajare care rămân și după colaborarea noastră.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="band white" id="gradinite">
+  <div class="wrap detail">
+    <div class="side rvl">
+      <div class="chip" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 10.5 12 6l8 4.5-8 4.5-8-4.5z"/><path d="M7 12.5V17c0 1.5 2.2 3 5 3s5-1.5 5-3v-4.5"/></svg></div>
+      <h2>Grădinițe & After-school</h2>
+      <p class="desc">Înțelegem provocările instituțiilor private de educație — și le acoperim integrat, cu un singur partener: oamenii potriviți în echipă și o comunicare care câștigă părinții.</p>
+      <a class="pill" href="contact.html">Cere o ofertă</a>
+    </div>
+    <div class="list-card rvr rv2">
+      <ul class="clist">
+        <li><span class="n">01</span><div><b>Recrutarea personalului</b><span>Educatoare și personal auxiliar cu vocație, selectați cu grijă.</span></div></li>
+        <li><span class="n">02</span><div><b>Promovarea activităților</b><span>Evenimente, ateliere și înscrieri — vizibile pentru părinții potriviți.</span></div></li>
+        <li><span class="n">03</span><div><b>Administrarea rețelelor sociale</b><span>Pagini active, coerente, care reflectă viața reală a grădiniței.</span></div></li>
+        <li><span class="n">04</span><div><b>Conținut foto și video</b><span>Momente autentice, surprinse cu grijă și cu acordul părinților.</span></div></li>
+        <li><span class="n">05</span><div><b>Comunicare online atractivă pentru părinți</b><span>Încrederea părinților se construiește zi de zi — și online.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="band alt">
+  <div class="wrap">
+    <div class="center-head rv">
+      <h2>Cum lucrăm împreună</h2>
+      <p class="sub">Simplu, transparent, ca între parteneri.</p>
+    </div>
+    <div class="proc-grid">
+      <div class="pcard rv"><div class="num">01</div><h3>Ne cunoaștem</h3><p>O discuție onestă despre afacerea ta, nevoile reale și obiectivele tale. Fără jargon, fără promisiuni goale.</p></div>
+      <div class="pcard rv rv2"><div class="num">02</div><h3>Construim planul</h3><p>Primești o propunere clară, adaptată domeniului tău — ce facem, cum facem și la ce să te aștepți.</p></div>
+      <div class="pcard rv rv3"><div class="num">03</div><h3>Livrăm și optimizăm</h3><p>Comunicare constantă, transparență și ajustări pe parcurs, ca lucrurile să meargă tot mai bine.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band cta-band">
+  <div class="wrap rv">
+    <h2>Nu știi de unde să începi?</h2>
+    <a class="pill" href="contact.html">Hai să vorbim — îți spunem sincer ce ți se potrivește</a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="f-card">
+    <div class="f-mark">JO<span class="o2">O</span>X Consult</div>
+    <div class="f-rule"></div>
+    <div class="f-cols">
+      <p class="desc">JOOX Consult este partenerul afacerilor mici și mijlocii pentru recrutare și comunicare online — dincolo de algoritmi, aproape de oameni.</p>
+      <div>
+        <a href="index.html">Acasă</a>
+        <a href="despre.html">Despre noi</a>
+        <a href="servicii.html">Servicii</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div>
+        <a href="politica-de-confidentialitate.html">Politica de confidențialitate</a>
+      </div>
+      <div class="f-right">
+        <div class="socs">
+          <a href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7h2.4l.4-3h-2.8V9.1c0-.9.3-1.5 1.6-1.5h1.3V4.9c-.6-.1-1.4-.2-2.3-.2-2.3 0-3.8 1.4-3.8 3.9V11H8v3h2.3v7h3.2z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".7" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M6.5 8.8H3.6V21h2.9V8.8zM5 7.4c1 0 1.7-.7 1.7-1.6C6.7 4.8 6 4.1 5 4.1s-1.7.7-1.7 1.7c0 .9.8 1.6 1.7 1.6zM21 14.1c0-3.2-1.7-4.7-4-4.7-1.8 0-2.6 1-3.1 1.7V8.8H11V21h2.9v-6.5c0-1.5.7-2.4 2-2.4 1.2 0 1.9.8 1.9 2.4V21H21v-6.9z"/></svg></a>
+        </div>
+        © 2026 JOOX Consult.<br>Toate drepturile rezervate.
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

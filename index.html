@@ -8,200 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&family=IBM+Plex+Sans:wght@400;500&family=Lora:wght@500&display=swap" rel="stylesheet">
-<style>
-:root{
-  --cream:#F7F1E8;
-  --greige:#E7E1D7;
-  --card:#FBF7F0;
-  --ink:#1B1B16;
-  --ink-60:#54544E;
-  --coral:#F25741;
-  --aqua:#ADD9DC;
-  --peach:#FEA674;
-  --dark:#4A4A46;
-  --serif:'Hedvig Letters Serif',Georgia,serif;
-  --sans:'IBM Plex Sans',system-ui,sans-serif;
-  --r-lg:28px;
-  --ease:cubic-bezier(.25,.8,.25,1);
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:var(--sans);font-weight:400;background:var(--cream);color:var(--ink);font-size:16.5px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-::selection{background:var(--coral);color:#fff}
-h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.08;letter-spacing:-.01em}
-a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
-.wrap{max-width:1240px;margin:0 auto;padding:0 clamp(18px,3.5vw,44px)}
-
-.rv{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
-.rv.in{opacity:1;transform:none}
-.rv2{transition-delay:.15s}.rv3{transition-delay:.3s}
-@media(prefers-reduced-motion:reduce){
-  .rv,[data-drift]{opacity:1!important;transform:none!important;transition:none!important}
-  html{scroll-behavior:auto}
-}
-
-/* ---- capsule nav ---- */
-.navwrap{position:fixed;top:14px;left:0;right:0;z-index:100;padding:0 clamp(14px,2.5vw,32px)}
-nav{max-width:1400px;margin:0 auto;background:var(--greige);border-radius:26px;display:flex;align-items:center;justify-content:space-between;padding:14px 14px 14px 28px;box-shadow:0 1px 0 rgba(27,27,22,.04);transition:box-shadow .4s}
-nav.on{box-shadow:0 10px 30px -18px rgba(27,27,22,.35)}
-.brand{display:flex;align-items:baseline;gap:14px}
-.brand .m{font-family:'Lora',serif;font-weight:500;font-size:23px;letter-spacing:.01em}
-.brand .m .o2{color:var(--coral);margin-left:-.33em}
-.brand .sep{width:1px;height:22px;background:rgba(27,27,22,.18);align-self:center}
-.nlinks{display:flex;gap:28px;font-size:15px;margin-left:6px}
-.nlinks a{padding:4px 2px;border-bottom:2px solid transparent;transition:border-color .3s}
-.nlinks a:hover,.nlinks a.active{border-color:var(--ink)}
-.ncta{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.55);border:1px solid rgba(27,27,22,.55);border-radius:999px;padding:12px 12px 12px 24px;font-size:15px;font-weight:500;transition:background .3s,transform .3s var(--ease)}
-.ncta:hover{background:#fff;transform:translateY(-1px)}
-.ncta .arr{width:30px;height:30px;border-radius:50%;background:var(--coral);color:#fff;display:flex;align-items:center;justify-content:center;transition:transform .3s var(--ease)}
-.ncta:hover .arr{transform:translateX(3px)}
-.burger{display:none;background:none;border:0;cursor:pointer;padding:10px;z-index:120}
-.burger span{display:block;width:22px;height:2px;background:var(--ink);margin:5px 0;border-radius:2px;transition:.35s var(--ease)}
-
-/* ---- hero ---- */
-.hero{padding:clamp(150px,18vh,190px) 0 0;text-align:center;position:relative}
-.hero h1{font-size:clamp(46px,7.4vw,96px);max-width:16ch;margin:0 auto}
-.hero .sub{max-width:46ch;margin:26px auto 0;color:var(--ink-60);font-size:clamp(16px,1.3vw,18px)}
-.pill{display:inline-flex;align-items:center;gap:10px;background:var(--coral);color:#fff;border:0;border-radius:999px;padding:16px 34px;font-family:var(--sans);font-size:15.5px;font-weight:500;cursor:pointer;transition:transform .35s var(--ease),box-shadow .35s,background .3s}
-.pill:hover{transform:translateY(-3px);box-shadow:0 16px 30px -14px rgba(242,87,65,.55)}
-.pill.dark{background:var(--dark)}
-.pill.dark:hover{box-shadow:0 16px 30px -14px rgba(74,74,70,.55)}
-.hero .pill{margin-top:36px;position:relative;z-index:5}
-
-/* hero collage */
-.collage{position:relative;height:clamp(420px,52vw,620px);margin-top:-40px;pointer-events:none}
-.collage .ph{position:absolute;border-radius:var(--r-lg);overflow:hidden;box-shadow:0 24px 50px -30px rgba(27,27,22,.28)}
-.collage .ph img{width:100%;height:100%;object-fit:cover}
-.blk{position:absolute;border-radius:var(--r-lg)}
-.ph.a{left:12%;top:12%;width:24%;aspect-ratio:4/5}
-.blk.aqua{left:3%;top:34%;width:13%;height:52%;background:var(--aqua)}
-.ph.b{left:38.5%;top:44%;width:19%;aspect-ratio:4/5}
-.ph.c{right:6%;top:4%;width:24%;aspect-ratio:4/5}
-.blk.peach{right:1.5%;top:44%;width:12%;height:50%;background:var(--peach)}
-
-/* ---- section base ---- */
-.band{padding:clamp(90px,11vw,150px) 0}
-.center-head{text-align:center;max-width:760px;margin:0 auto}
-.center-head h2{font-size:clamp(38px,5vw,64px)}
-.center-head .sub{color:var(--ink-60);margin-top:22px;font-size:17px}
-
-/* ---- services (greige band, staggered cards) ---- */
-.svc{background:var(--greige)}
-.svc-stage{position:relative;max-width:1080px;margin:clamp(46px,6vw,80px) auto 0;display:grid;grid-template-columns:1fr 1fr;gap:34px 40px}
-.scard{background:var(--card);border-radius:var(--r-lg);padding:40px 38px 44px;min-height:380px;display:flex;flex-direction:column;transition:transform .5s var(--ease),box-shadow .5s}
-.scard:hover{transform:translateY(-6px);box-shadow:0 26px 50px -32px rgba(27,27,22,.35)}
-.scard .chip{width:58px;height:58px;border-radius:16px;background:var(--coral);display:flex;align-items:center;justify-content:center;color:#fff;margin-bottom:auto}
-.scard h3{font-size:clamp(26px,2.6vw,34px);margin:44px 0 14px}
-.scard p{color:var(--ink-60);font-size:15.5px;max-width:38ch}
-.scard.s2{transform:translateY(64px)}
-.scard.s2:hover{transform:translateY(58px)}
-.scard.s3{transform:translateY(-10px)}
-.scard.s3:hover{transform:translateY(-16px)}
-.svc-cta{align-self:start;justify-self:start;margin-top:90px}
-@media(min-width:861px){.svc-stage{padding-bottom:70px}}
-
-/* ---- method (white band, collage of UI pieces) ---- */
-.method{background:#fff}
-.m-stage{position:relative;height:clamp(560px,54vw,660px);max-width:1080px;margin:clamp(50px,6vw,90px) auto 0}
-.m-stage>*{position:absolute}
-.m-photo{left:6%;top:6%;width:36%;aspect-ratio:4/5;border-radius:var(--r-lg);overflow:hidden;box-shadow:0 26px 50px -30px rgba(27,27,22,.3)}
-.m-photo img{width:100%;height:100%;object-fit:cover}
-.chiplg{width:clamp(70px,8vw,100px);aspect-ratio:1;border-radius:24px;display:flex;align-items:center;justify-content:center}
-.chip-or{left:1%;bottom:14%;background:var(--peach);color:var(--ink)}
-.chip-gr{left:50%;top:2%;background:var(--greige);color:var(--dark)}
-.m-roles{right:4%;top:14%;width:32%;background:var(--card);border-radius:22px;padding:22px 24px;box-shadow:0 20px 40px -28px rgba(27,27,22,.25)}
-.avrow{display:flex;margin-bottom:12px}
-.av{width:44px;height:44px;border-radius:50%;border:2px solid var(--coral);background:var(--greige);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:500;color:var(--dark);margin-right:-10px}
-.m-roles .t1{font-size:15px;font-weight:500}
-.m-roles .t2{font-size:14px;color:var(--ink-60)}
-.m-card{left:44%;top:52%;width:34%;background:var(--dark);color:#F3F0EA;border-radius:22px;padding:26px 28px;box-shadow:0 26px 50px -28px rgba(27,27,22,.45)}
-.m-card .av{border-color:var(--coral);background:#5B5B56;color:#F3F0EA;margin:0 0 14px}
-.m-card p{font-size:14.5px;line-height:1.6}
-.m-card p em{font-style:italic}
-.dotline{left:42.5%;top:47%;width:14%;border-top:2px dotted rgba(27,27,22,.4)}
-
-/* ---- testimonials ---- */
-.testi{background:var(--cream)}
-.t-cta{text-align:center;margin-bottom:clamp(70px,9vw,110px)}
-.t-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px;max-width:1080px;margin:clamp(46px,6vw,70px) auto 0;align-items:stretch}
-.t-quote{background:#fff;border-radius:var(--r-lg);padding:clamp(36px,4vw,60px);display:flex;flex-direction:column;justify-content:center;text-align:center}
-.t-quote .q{font-family:var(--serif);font-size:clamp(22px,2.4vw,30px);line-height:1.35}
-.t-quote .who{margin-top:26px;font-size:14.5px;color:var(--ink-60)}
-.t-quote .who b{display:block;font-weight:500;color:var(--ink)}
-.t-photo{border-radius:var(--r-lg);overflow:hidden;min-height:360px}
-.t-photo img{width:100%;height:100%;object-fit:cover}
-.t-dots{display:flex;gap:10px;justify-content:center;margin-top:30px}
-.t-dots button{width:9px;height:9px;border-radius:50%;border:0;background:rgba(27,27,22,.22);cursor:pointer;transition:background .3s,transform .3s}
-.t-dots button.on{background:var(--coral);transform:scale(1.25)}
-.t-note{max-width:1080px;margin:18px auto 0;text-align:center;font-size:12.5px;color:var(--ink-60);opacity:.7}
-
-/* ---- contact ---- */
-.contact{background:var(--greige)}
-.c-inner{max-width:820px;margin:0 auto;text-align:center}
-.c-inner h2{font-size:clamp(38px,5vw,60px)}
-.c-inner .sub{color:var(--ink-60);margin:20px auto 40px;max-width:44ch}
-form{display:grid;gap:16px;text-align:left;background:var(--card);border-radius:var(--r-lg);padding:clamp(28px,4vw,48px)}
-.fr{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-label{font-size:13px;font-weight:500;display:block;margin-bottom:7px}
-input,select,textarea{width:100%;font-family:var(--sans);font-size:15px;padding:14px 16px;border:1px solid rgba(27,27,22,.16);border-radius:14px;background:#fff;color:var(--ink);transition:border-color .3s,box-shadow .3s;appearance:none}
-input:focus,select:focus,textarea:focus{outline:none;border-color:var(--coral);box-shadow:0 0 0 3px rgba(242,87,65,.14)}
-textarea{min-height:120px;resize:vertical}
-form .pill{justify-self:center;margin-top:8px}
-.alt{display:flex;gap:26px;justify-content:center;margin-top:30px;flex-wrap:wrap;font-size:15px}
-.alt a{border-bottom:1px solid rgba(27,27,22,.3);padding-bottom:2px;transition:color .3s,border-color .3s}
-.alt a:hover{color:var(--coral);border-color:var(--coral)}
-
-/* ---- footer (inset card) ---- */
-footer{background:var(--cream);padding:clamp(50px,7vw,90px) clamp(14px,2.5vw,32px)}
-.f-card{max-width:1400px;margin:0 auto;background:#fff;border-radius:34px;padding:clamp(36px,5vw,70px)}
-.f-mark{font-family:'Lora',serif;font-weight:500;font-size:clamp(44px,7vw,84px);line-height:1}
-.f-mark .o2{color:var(--coral);margin-left:-.33em}
-.f-rule{height:2px;background:var(--coral);margin:26px 0 34px;opacity:.85}
-.f-cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:34px;font-size:14.5px}
-.f-cols .desc{color:var(--ink-60);max-width:32ch}
-.f-cols a{display:block;padding:4px 0;color:var(--ink-60);transition:color .3s}
-.f-cols a:hover{color:var(--ink)}
-.f-right{text-align:right;color:var(--ink-60)}
-.socs{display:flex;gap:12px;justify-content:flex-end;margin-bottom:16px}
-.socs a{width:38px;height:38px;border-radius:50%;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;transition:background .3s,transform .3s var(--ease)}
-.socs a:hover{background:var(--coral);transform:translateY(-2px)}
-
-/* ---- responsive ---- */
-@media(max-width:860px){
-  .nlinks{position:fixed;inset:0;background:var(--greige);flex-direction:column;align-items:center;justify-content:center;font-size:22px;gap:32px;opacity:0;pointer-events:none;transition:opacity .4s var(--ease);z-index:110;margin:0}
-  .nlinks.open{opacity:1;pointer-events:auto}
-  .burger{display:block}
-  .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-  .burger.open span:nth-child(2){opacity:0}
-  .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-  .ncta{display:none}
-  .brand .sep{display:none}
-  .collage{height:auto;margin-top:36px;position:relative;display:flex;justify-content:center;align-items:flex-start;gap:10px;padding:14px 16px 54px}
-  .collage .ph{position:static;width:30%;aspect-ratio:4/5;z-index:1;box-shadow:0 14px 28px -18px rgba(27,27,22,.3)}
-  .collage .ph.b{margin-top:30px}
-  .collage .blk{position:absolute;display:block}
-  .collage .blk.aqua{left:6px;top:36%;width:15%;height:44%}
-  .collage .blk.peach{right:6px;top:30%;width:14%;height:46%}
-  .collage [data-drift]{transform:none!important}
-  .svc-stage{grid-template-columns:1fr;gap:18px}
-  .scard{min-height:0}
-  .scard.s2,.scard.s3{transform:none}
-  .scard.s2:hover,.scard.s3:hover{transform:translateY(-6px)}
-  .svc-cta{margin-top:10px}
-  .m-stage{height:auto;display:grid;gap:18px}
-  .m-stage>*{position:static}
-  .m-photo{width:100%;max-width:380px;margin:0 auto}
-  .chiplg,.dotline{display:none}
-  .m-roles,.m-card{width:auto}
-  .m-card [data-drift],.m-roles[data-drift]{transform:none!important}
-  .t-grid{grid-template-columns:1fr}
-  .fr{grid-template-columns:1fr}
-  .f-cols{grid-template-columns:1fr;gap:22px}
-  .f-right{text-align:left}
-  .socs{justify-content:flex-start}
-}
-</style>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -212,13 +19,12 @@ footer{background:var(--cream);padding:clamp(50px,7vw,90px) clamp(14px,2.5vw,32p
       <span class="sep"></span>
     </a>
     <div class="nlinks" id="nl">
-      <a href="#top" class="active">Acasă</a>
-      <a href="#servicii">Servicii</a>
-      <a href="#metoda">Metoda JOOX</a>
-      <a href="#contact">Contact</a>
+      <a href="index.html" class="active">Acasă</a>
+      <a href="despre.html">Despre noi</a>
+      <a href="servicii.html">Servicii</a>
     </div>
     <button class="burger" id="bg" aria-label="Meniu" aria-expanded="false"><span></span><span></span><span></span></button>
-    <a class="ncta" href="#contact">Contactează-ne <span class="arr"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    <a class="ncta" href="contact.html">Contactează-ne <span class="arr"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
   </nav>
 </div>
 
@@ -228,7 +34,7 @@ footer{background:var(--cream);padding:clamp(50px,7vw,90px) clamp(14px,2.5vw,32p
   <div class="wrap">
     <h1 class="rv">Oamenii potriviți,<br>povestea potrivită</h1>
     <p class="sub rv rv2">JOOX Consult este partenerul afacerilor mici și mijlocii pentru recrutare și social media — implicat, onest și aproape de oameni.</p>
-    <a class="pill rv rv3" href="#servicii">Descoperă serviciile</a>
+    <a class="pill rv rv3" href="servicii.html">Descoperă serviciile</a>
   </div>
   <div class="collage" aria-hidden="true">
     <div class="blk aqua" data-drift="0.06"></div>
@@ -246,23 +52,23 @@ footer{background:var(--cream);padding:clamp(50px,7vw,90px) clamp(14px,2.5vw,32p
       <p class="sub">O suită de servicii gândită să conecteze strategia de oameni cu obiectivele afacerii tale.</p>
     </div>
     <div class="svc-stage">
-      <div class="scard rv">
-        <div class="chip" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="8" r="3.4"/><path d="M3.5 19c.7-3 2.9-4.6 5.5-4.6s4.8 1.6 5.5 4.6"/><circle cx="17" cy="9.5" r="2.4"/><path d="M15.5 14.6c2.4.2 4.2 1.5 4.9 4"/></svg></div>
-        <h3>Recrutare</h3>
-        <p>Identificăm și selectăm candidații potriviți — blue-collar, volum, poziții operaționale și administrative — care nu doar ocupă un post, ci ridică echipa.</p>
-      </div>
-      <div class="scard s2 rv rv2">
+      <div class="scard rvl">
         <div class="chip" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><circle cx="12" cy="12" r="3.6"/><circle cx="17.2" cy="6.8" r=".8" fill="currentColor"/></svg></div>
         <h3>Social Media</h3>
         <p>Administrare Facebook & Instagram, calendar editorial, conținut foto-video și Reels — o prezență online care spune povestea ta autentic, nu la întâmplare.</p>
       </div>
-      <div class="scard s3 rv">
+      <div class="scard s2 rvr rv2">
+        <div class="chip" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="8" r="3.4"/><path d="M3.5 19c.7-3 2.9-4.6 5.5-4.6s4.8 1.6 5.5 4.6"/><circle cx="17" cy="9.5" r="2.4"/><path d="M15.5 14.6c2.4.2 4.2 1.5 4.9 4"/></svg></div>
+        <h3>Recrutare</h3>
+        <p>Identificăm și selectăm candidații potriviți — blue-collar, volum, poziții operaționale și administrative — care nu doar ocupă un post, ci ridică echipa.</p>
+      </div>
+      <div class="scard s3 rvu">
         <div class="chip" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 10.5 12 6l8 4.5-8 4.5-8-4.5z"/><path d="M7 12.5V17c0 1.5 2.2 3 5 3s5-1.5 5-3v-4.5"/></svg></div>
         <h3>Grădinițe & After-school</h3>
         <p>Pachet integrat pentru instituții private de educație: recrutarea personalului, promovarea activităților și comunicare online care câștigă părinții.</p>
       </div>
       <div class="svc-cta rv rv2">
-        <a class="pill dark" href="#contact">Discută cu noi</a>
+        <a class="pill dark" href="servicii.html">Toate serviciile</a>
       </div>
     </div>
   </div>
@@ -294,7 +100,7 @@ footer{background:var(--cream);padding:clamp(50px,7vw,90px) clamp(14px,2.5vw,32p
 
 <section class="band testi" id="testimoniale">
   <div class="wrap">
-    <div class="t-cta rv"><a class="pill" href="#contact">Mai multe despre noi</a></div>
+    <div class="t-cta rv"><a class="pill" href="despre.html">Mai multe despre noi</a></div>
     <div class="center-head rv">
       <h2>Vocile partenerilor</h2>
     </div>
@@ -336,8 +142,8 @@ footer{background:var(--cream);padding:clamp(50px,7vw,90px) clamp(14px,2.5vw,32p
     </form>
     <div class="alt rv rv3">
       <a href="mailto:contact@jooxconsult.ro">contact@jooxconsult.ro</a>
-      <a href="https://wa.me/40700000000" target="_blank" rel="noopener">WhatsApp</a>
-      <a href="https://instagram.com/" target="_blank" rel="noopener">@jooxconsult</a>
+      <a href="https://wa.me/40799321366" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="https://www.instagram.com/joox_consult?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener">@jooxconsult</a>
     </div>
   </div>
 </section>
@@ -351,19 +157,19 @@ footer{background:var(--cream);padding:clamp(50px,7vw,90px) clamp(14px,2.5vw,32p
     <div class="f-cols">
       <p class="desc">JOOX Consult este partenerul afacerilor mici și mijlocii pentru recrutare și comunicare online — dincolo de algoritmi, aproape de oameni.</p>
       <div>
-        <a href="#top">Acasă</a>
-        <a href="#servicii">Servicii</a>
-        <a href="#metoda">Metoda JOOX</a>
-        <a href="#contact">Contact</a>
+        <a href="index.html">Acasă</a>
+        <a href="despre.html">Despre noi</a>
+        <a href="servicii.html">Servicii</a>
+        <a href="contact.html">Contact</a>
       </div>
       <div>
-        <a href="#">Politica de confidențialitate</a>
+        <a href="politica-de-confidentialitate.html">Politica de confidențialitate</a>
         <a href="#">Declarație de accesibilitate</a>
       </div>
       <div class="f-right">
         <div class="socs">
           <a href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7h2.4l.4-3h-2.8V9.1c0-.9.3-1.5 1.6-1.5h1.3V4.9c-.6-.1-1.4-.2-2.3-.2-2.3 0-3.8 1.4-3.8 3.9V11H8v3h2.3v7h3.2z"/></svg></a>
-          <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".7" fill="currentColor"/></svg></a>
+          <a href="https://www.instagram.com/joox_consult?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".7" fill="currentColor"/></svg></a>
           <a href="#" aria-label="LinkedIn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M6.5 8.8H3.6V21h2.9V8.8zM5 7.4c1 0 1.7-.7 1.7-1.6C6.7 4.8 6 4.1 5 4.1s-1.7.7-1.7 1.7c0 .9.8 1.6 1.7 1.6zM21 14.1c0-3.2-1.7-4.7-4-4.7-1.8 0-2.6 1-3.1 1.7V8.8H11V21h2.9v-6.5c0-1.5.7-2.4 2-2.4 1.2 0 1.9.8 1.9 2.4V21H21v-6.9z"/></svg></a>
         </div>
         © 2026 JOOX Consult.<br>Toate drepturile rezervate.
@@ -372,37 +178,9 @@ footer{background:var(--cream);padding:clamp(50px,7vw,90px) clamp(14px,2.5vw,32p
   </div>
 </footer>
 
+<script src="js/main.js"></script>
 <script>
-const nav=document.getElementById('nav');
-addEventListener('scroll',()=>nav.classList.toggle('on',scrollY>20),{passive:true});
-
-const bg=document.getElementById('bg'),nl=document.getElementById('nl');
-bg.addEventListener('click',()=>{const o=nl.classList.toggle('open');bg.classList.toggle('open',o);bg.setAttribute('aria-expanded',o)});
-nl.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nl.classList.remove('open');bg.classList.remove('open');bg.setAttribute('aria-expanded','false')}));
-
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -4% 0px'});
-document.querySelectorAll('.rv').forEach(el=>io.observe(el));
-
-/* parallax drift — each collage piece moves at its own speed */
-const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-const drifts=[...document.querySelectorAll('[data-drift]')];
-if(!reduce&&drifts.length&&innerWidth>860){
-  let ticking=false;
-  const update=()=>{
-    const vh=innerHeight;
-    drifts.forEach(el=>{
-      const r=el.parentElement.getBoundingClientRect();
-      const p=(r.top+r.height/2-vh/2)/vh;
-      el.style.transform=`translateY(${(p*parseFloat(el.dataset.drift)*400).toFixed(1)}px)`;
-    });
-    ticking=false;
-  };
-  addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(update);ticking=true}},{passive:true});
-  update();
-}
-
-/* testimonial placeholder carousel */
-const slides=[
+/* testimonial placeholder carousel */const slides=[
   {q:"„Aici va sta primul testimonial real al unui client JOOX — sincer, în cuvintele lui.\u201d",n:"Nume client",r:"Funcție, Companie"},
   {q:"„Al doilea testimonial — de la un manager de grădiniță sau un client de recrutare.\u201d",n:"Nume client",r:"Funcție, Companie"},
   {q:"„Al treilea testimonial — colaborare social media.\u201d",n:"Nume client",r:"Funcție, Companie"}
